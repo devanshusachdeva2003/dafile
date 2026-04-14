@@ -24,9 +24,31 @@ const Hero = () => {
                 <circle cx="50" cy="50" r="40" stroke="#ff7a18" strokeWidth="10" fill="none" strokeLinecap="round" strokeDasharray="251.2" strokeDashoffset="80" />
               </svg>
 
-              <div className="absolute inset-3 md:inset-4 rounded-full bg-white flex items-center justify-center text-red-500 font-semibold text-lg md:text-2xl border-4 border-orange-100 shadow-lg">
-                Start
-              </div>
+              <div className="group absolute inset-3 md:inset-4 rounded-full bg-white flex items-center justify-center border-4 border-orange-100 shadow-lg overflow-hidden">
+
+  {/* Start Text */}
+  <span className="absolute text-red-500 font-semibold text-lg md:text-2xl 
+    transition-all duration-300 
+    group-hover:opacity-0 group-hover:scale-75">
+    Start
+  </span>
+
+  {/* Upload Icon */}
+  <div className="absolute opacity-0 scale-75 transition-all duration-300 
+    group-hover:opacity-100 group-hover:scale-100 text-orange-300">
+    
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="w-10 h-10 md:w-14 md:h-14"
+    >
+      <path d="M19 18a4 4 0 0 0-.97-7.88A6 6 0 0 0 6.24 9.2 4.5 4.5 0 0 0 6.5 18H10v-3.59L8.7 15.7a1 1 0 1 1-1.4-1.4l3-3a1 1 0 0 1 1.4 0l3 3a1 1 0 1 1-1.4 1.4L12 14.41V18h7Z" />
+    </svg>
+
+  </div>
+
+</div>
             </div>
 
            
