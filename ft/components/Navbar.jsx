@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-8 py-4 flex items-center justify-between">
+    <nav className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-8 py-4 flex items-center justify-between ">
       
       {/* Logo */}
       <h1 className="text-2xl font-bold italic">AD Transfer</h1>
