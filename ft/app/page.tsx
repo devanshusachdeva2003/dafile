@@ -1,11 +1,22 @@
-import Image from "next/image";
-import Hero from "../component/Hero";
+import Hero from  "@/component/components/Hero";
+import FileSteps from "@/component/components/file";   
+import FileUploader from "@/component/components/FileUploader";
+
 export default function Home() {
   return (
-
-
-    <div>
+    <main className="min-h-screen bg-gray-50">
+      
+      {/* Hero Section */}
       <Hero />
-    </div>  );
 
+      {/* Steps UI */}
+      <div className="mt-10">
+        <FileSteps />
+      </div>
+
+      {/* File Upload */}
+      {/* File Upload (moved into Hero) */}
+
+    </main>
+  )
 }

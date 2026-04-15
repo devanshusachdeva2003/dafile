@@ -1,21 +1,9 @@
 "use client"
 
 import React from 'react'
-import FileUploader from './components/FileUploader'
-import { useState } from 'react'
+import FileUploader from './FileUploader'
 
 const Hero = () => {
-
-  const [heroPreview, setHeroPreview] = useState<string | null>(null)
-
-  const handleFiles = (files: File[]) => {
-    if (!files || !files.length) return
-    // revoke previous if any
-    setHeroPreview((prev) => {
-      if (prev) URL.revokeObjectURL(prev)
-      return URL.createObjectURL(files[0])
-    })
-  }
 
   return (
     <section
@@ -36,19 +24,15 @@ const Hero = () => {
 
           <div className="mt-8 flex flex-col items-center">
             <div className="relative w-40 h-40 md:w-52 md:h-52">
-              {!heroPreview && (
-                <svg className="absolute inset-0 w-full h-full origin-center animate-spin z-30" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="50" cy="50" r="40" stroke="#ffe8d6" strokeWidth="10" fill="none" />
-                  <circle cx="50" cy="50" r="40" stroke="#ff7a18" strokeWidth="10" fill="none" strokeLinecap="round" strokeDasharray="251.2" strokeDashoffset="80" />
-                </svg>
-              )}
+              <svg className="absolute inset-0 w-full h-full origin-center animate-spin" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="40" stroke="#ffe8d6" strokeWidth="10" fill="none" />
+                <circle cx="50" cy="50" r="40" stroke="#ff7a18" strokeWidth="10" fill="none" strokeLinecap="round" strokeDasharray="251.2" strokeDashoffset="80" />
+              </svg>
 
-              {heroPreview ? (
-                <img src={heroPreview} alt="preview" className="absolute inset-0 w-full h-full object-cover rounded-full" />
-              ) : null}
-
-              <FileUploader onFiles={handleFiles} />
+              <FileUploader />
             </div>
+
+           
           </div>
         </div>
       </div>
